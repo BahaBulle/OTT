@@ -9,6 +9,9 @@ namespace OTT
     public interface IExtractArguments
     {
         string Directory { get; set; }
+
         IEnumerable<string> FilesList { get; }
+
+        EnumFileTypes FileType { get; set; }
     }
 }

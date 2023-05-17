@@ -7,6 +7,8 @@ namespace OTT
     using CommandLine;
     using CommandLine.Text;
     using NLog;
+    using OTT.Actions.EVB;
+    using OTT.Common;
 
     internal class Program
     {
@@ -34,11 +36,17 @@ namespace OTT
             return Constants.RETURN_CODE_ARGUMENTS_ERRORS;
         }
 
-        private static int ExtractAction(ExtractArguments parameters)
+        private static int ExtractAction(IExtractArguments parameters)
         {
             try
             {
-                
+                if (parameters.FileType is EnumFileTypes.ALL or EnumFileTypes.EVB)
+                {
+                    var files = FilesHelper.GetFiles(parameters.Directory, parameters.FilesList, Constants.EVB_EXTENSION);
+
+                    var extracter = new EVBExtracter(files);
+                    extracter.Extract();
+                }
             }
             catch (Exception ex)
             {
