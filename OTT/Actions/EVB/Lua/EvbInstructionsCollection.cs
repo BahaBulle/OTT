@@ -7,7 +7,7 @@ namespace OTT.Actions.EVB
     using System.Collections.ObjectModel;
     using System.IO;
 
-    internal class EvbInstructionsCollection : Collection<ulong>
+    internal class EvbInstructionsCollection : Collection<EvbInstruction>
     {
         internal EvbInstructionsCollection(BinaryReader binaryReader, EvbHeader header)
         {
@@ -15,9 +15,9 @@ namespace OTT.Actions.EVB
 
             for (ulong i = 0; i < numberOfElement; i++)
             {
-                ulong value = EvbHelper.ReadInteger(binaryReader, header.IsLittleEndian, header.SizeOfInstruction);
+                var instruction = new EvbInstruction(EvbHelper.ReadInteger(binaryReader, header.IsLittleEndian, header.SizeOfInstruction));
 
-                this.Add(value);
+                this.Add(instruction);
             }
         }
     }
