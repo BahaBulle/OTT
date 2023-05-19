@@ -18,14 +18,14 @@ namespace OTT.Actions.EVB
             {
                 for (int i = 0; i < intSize; ++i)
                 {
-                    ret += (ulong)bytes[i] << (i * 8);
+                    ret += (ulong)bytes[i] << i * 8;
                 }
             }
             else
             {
                 for (int i = 0; i < intSize; ++i)
                 {
-                    ret += (ulong)(bytes[i]) << ((intSize - i - 1) * 8);
+                    ret += (ulong)bytes[i] << (intSize - i - 1) * 8;
                 }
             }
 

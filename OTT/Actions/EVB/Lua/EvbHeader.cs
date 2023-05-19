@@ -24,7 +24,7 @@ namespace OTT.Actions.EVB
             this.Id = this.reader.ReadBytes(4);
             this.Version = this.reader.ReadByte();
 
-            if ((this.Id[0] != 0x1B) || (this.Id[1] != 0x4C) || (this.Id[2] != 0x75) || (this.Id[3] != 0x61) || (this.Version != 0x51))
+            if (this.Id[0] != 0x1B || this.Id[1] != 0x4C || this.Id[2] != 0x75 || this.Id[3] != 0x61 || this.Version != 0x51)
             {
                 throw new EvbException("Not a correct EVB file : header");
             }

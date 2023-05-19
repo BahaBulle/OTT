@@ -55,10 +55,10 @@ namespace OTT.Actions.EVB
             this.Value = value;
 
             this.Code = value & 0x3F;
-            this.A = (value >> 6) & 0xFF;
-            this.B = (value >> 6 + 8 + 9) & 0x1FF;
-            this.C = (value >> 6 + 8) & 0x1FF;
-            this.BC = value >> (6 + 8);
+            this.A = value >> 6 & 0xFF;
+            this.B = value >> 6 + 8 + 9 & 0x1FF;
+            this.C = value >> 6 + 8 & 0x1FF;
+            this.BC = value >> 6 + 8;
         }
 
         public ulong A { get; private set; }
