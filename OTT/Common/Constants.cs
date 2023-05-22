@@ -14,5 +14,8 @@ namespace OTT
         internal const string ITB_EXTENSION = ".itb";
         internal const string LIN_EXTENSION = ".lin";
         internal const string TX_EXTENSION = ".tx";
+
+        internal const string EXTRACT_DIRECTORY = "EXTRACT";
+        internal const string INSERT_DIRECTORY = "INSERT";
     }
 }

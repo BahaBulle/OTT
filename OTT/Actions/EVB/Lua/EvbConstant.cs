@@ -6,19 +6,21 @@ namespace OTT.Actions.EVB
 {
     internal class EvbConstant
     {
-        public EvbConstant(byte type, bool value)
+        public EvbConstant(bool value)
         {
-            this.Type = type;
+            this.Type = EnumTypesConstant.Bool;
             this.Bool = value;
         }
-        public EvbConstant(byte type, double value)
+
+        public EvbConstant(double value)
         {
-            this.Type = type;
+            this.Type = EnumTypesConstant.Number;
             this.Double = value;
         }
-        public EvbConstant(byte type, string? value)
+
+        public EvbConstant(string? value)
         {
-            this.Type = type;
+            this.Type = EnumTypesConstant.String;
             this.String = value;
         }
 
@@ -30,6 +32,6 @@ namespace OTT.Actions.EVB
 
         public string? String { get; private set; }
 
-        public byte Type { get; private set; }
+        public EnumTypesConstant Type { get; private set; }
     }
 }
