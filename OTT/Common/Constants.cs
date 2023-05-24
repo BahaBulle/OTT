@@ -15,7 +15,8 @@ namespace OTT
         internal const string LIN_EXTENSION = ".lin";
         internal const string TX_EXTENSION = ".tx";
 
-        internal const string EXTRACT_DIRECTORY = "EXTRACT";
-        internal const string INSERT_DIRECTORY = "INSERT";
+        internal const string SCRIPTS_DIRECTORY = "Scripts";
+
+        internal const string SOURCE_LANGUAGE = "EN";
     }
 }

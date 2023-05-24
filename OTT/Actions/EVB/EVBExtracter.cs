@@ -53,7 +53,7 @@ namespace OTT.Actions.EVB
 
         public void Extract()
         {
-            Directory.CreateDirectory(Constants.EXTRACT_DIRECTORY);
+            Directory.CreateDirectory(Constants.SCRIPTS_DIRECTORY);
 
             foreach (var file in this.files)
             {
@@ -111,7 +111,7 @@ namespace OTT.Actions.EVB
                         }
                     }
 
-                    string path = Path.Combine(Constants.EXTRACT_DIRECTORY, $"{file.Name}.txt");
+                    string path = Path.Combine(Constants.SCRIPTS_DIRECTORY, EvbCommon.EVB_DIRECTORY, Constants.SOURCE_LANGUAGE, $"{file.Name}.txt");
 
                     using (var writer = new StreamWriter(File.OpenWrite(path), Encoding.Unicode))
                     {
