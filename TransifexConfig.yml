@@ -4,5 +4,5 @@ git:
     file_format: TXT
     source_file_extension: txt
     source_language: en
-    source_file_dir: locale/Scripts
+    source_file_dir: Scripts
     translation_files_expression: 'Scripts/<lang>'
