@@ -29,9 +29,9 @@ namespace OTT.Actions.EVB
                         break;
 
                     case 4:
-                        constant = new EvbConstant(EvbHelper.ReadString(binaryReader, header.IsLittleEndian, header.SizeOfInt));
+                        (var value, var data) = EvbHelper.ReadStringBinary(binaryReader, header.IsLittleEndian, header.SizeOfInt);
+                        constant = new EvbConstant(value, data);
                         break;
-
                 }
 
                 if (constant != null)

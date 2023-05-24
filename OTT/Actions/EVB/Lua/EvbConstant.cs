@@ -23,8 +23,16 @@ namespace OTT.Actions.EVB
             this.Type = EnumTypesConstant.String;
             this.String = value;
         }
+        public EvbConstant(string? value, byte[]? data)
+        {
+            this.Type = EnumTypesConstant.String;
+            this.String = value;
+            this.Data = data;
+        }
 
         public bool? Bool { get; private set; }
+
+        public byte[]? Data { get; private set; }
 
         public double? Double { get; private set; }
 

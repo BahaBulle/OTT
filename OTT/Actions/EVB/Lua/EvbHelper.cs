@@ -70,5 +70,23 @@ namespace OTT.Actions.EVB
 
             return new string(chars);
         }
+
+        internal static (string?, byte[]?) ReadStringBinary(BinaryReader reader, bool isLittleEndian, byte size)
+        {
+            ulong stringSize = ReadInteger(reader, isLittleEndian, size);
+
+            if (stringSize == 0) { return (null, null); }
+
+            byte[] bytes = reader.ReadBytes((int)stringSize);
+
+            char[] chars = new char[bytes.Length - 1];
+
+            for (int i = 0; i < bytes.Length - 1; ++i)
+            {
+                chars[i] = (char)bytes[i];
+            }
+
+            return (new string(chars), bytes);
+        }
     }
 }
